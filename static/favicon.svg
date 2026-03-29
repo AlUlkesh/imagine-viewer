@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark rounded background -->
+  <rect width="32" height="32" rx="6" fill="#111111"/>
+
+  <!-- V — full path, rendered behind I -->
+  <path d="M6.5 4.5 L16 27.5 L25.5 4.5" fill="none"
+        stroke="#e040fb" stroke-width="4.5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- I bar (sits over V lower half) -->
+  <rect x="14" y="4.5" width="4" height="22" rx="1" fill="#e0e0e0"/>
+
+  <!-- I bottom serif (covers V vertex region → I is in front at bottom) -->
+  <rect x="10" y="22.5" width="12" height="4" rx="1.5" fill="#e0e0e0"/>
+
+  <!-- V upper arms redrawn on top of I bar → V crosses in front of I at middle -->
+  <line x1="6.5"  y1="4.5" x2="14" y2="15" stroke="#e040fb"
+        stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="25.5" y1="4.5" x2="18" y2="15" stroke="#e040fb"
+        stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- I top serif — topmost layer → I is in front at the very top -->
+  <rect x="10" y="4.5" width="12" height="4" rx="1.5" fill="#e0e0e0"/>
+</svg>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imagine Viewer</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header class="topbar">
+    <h1>Imagine<span>Viewer</span></h1>
+    <input id="dir-input" type="text"
+           placeholder="Path to grok-imagine download folder…"
+           spellcheck="false" autocomplete="off">
+    <button id="browse-btn" title="Browse for folder">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+    </button>
+    <button id="load-btn">Load</button>
+    <div class="filter-wrap">
+      <svg class="filter-icon" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M10 18h4v-2h-4v2zm-7-10v2h18V8H3zm3 6h12v-2H6v2z"/></svg>
+      <input id="filter-input" type="search" placeholder="Filter by prompt…"
+             spellcheck="false" autocomplete="off">
+    </div>
+    <span id="status-bar"></span>
+  </header>
+
+  <div class="main">
+
+    <div id="grid-container">
+      <div id="post-grid"></div>
+    </div>
+
+    <aside id="detail-panel" class="hidden">
+      <div class="detail-header">
+        <h2>Post Details</h2>
+        <button id="close-btn" title="Close (Esc)">✕</button>
+      </div>
+      <div id="preview-container"></div>
+      <div id="variant-strip-wrap">
+        <span class="section-label">
+          Variants&nbsp;
+          <kbd>←</kbd><kbd>→</kbd>&nbsp;&nbsp;<kbd>Space</kbd> fullscreen
+        </span>
+        <div id="variant-strip"></div>
+      </div>
+      <div id="meta-wrap">
+        <div id="file-path-row"></div>
+        <div id="meta-block"></div>
+      </div>
+    </aside>
+
+  </div>
+
+  <div id="fullscreen-overlay" class="hidden">
+    <button id="fs-close" title="Exit fullscreen (Esc / Space)">✕</button>
+    <div id="fs-media"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
